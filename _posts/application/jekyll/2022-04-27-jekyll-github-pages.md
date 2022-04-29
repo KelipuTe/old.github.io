@@ -1,13 +1,13 @@
 ---
 title: "使用 Jekyll 和 GitHub Pages 制作个人博客"
 date: 2022-04-27 22:00:00 +0800
-tags: jekyll github-page
-comment: false
+tags: ruby jekyll github-page
 show_author_profile: true
 show_subscribe: false
+comment: false
 ---
 
-### 环境test
+### 环境
 
 - Windows 11 家庭版
 - Ruby 3.1.2
@@ -64,6 +64,7 @@ ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]
 
 ```
 > gem install jekyll
+
 Fetching unicode-display_width-1.8.0.gem
 Fetching terminal-table-2.0.0.gem
 Fetching safe_yaml-1.0.5.gem
@@ -195,6 +196,7 @@ jekyll 4.2.2
 
 ```
 > jekyll new github.io
+
 Running bundle install in D:/workspace/github.io...
   Bundler: Fetching gem metadata from https://rubygems.org/..........
   Bundler: Resolving dependencies...
@@ -245,6 +247,7 @@ Jekyll 集成了一个开发用的服务器，可以使用浏览器在本地进�
 
 ```
 > jekyll serve
+
 Configuration file: D:/workspace/github.io/_config.yml
             Source: D:/workspace/github.io
        Destination: D:/workspace/github.io/_site
@@ -265,6 +268,7 @@ Configuration file: D:/workspace/github.io/_config.yml
 
 ```
 > jekyll serve
+
 Configuration file: D:/workspace/github.io/_config.yml
             Source: D:/workspace/github.io
        Destination: D:/workspace/github.io/_site
@@ -312,6 +316,7 @@ C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-4.2.2/lib/jekyll/commands/serve/se
 
 ```
 > jekyll serve --trace
+
 Configuration file: D:/workspace/github.io/_config.yml
             Source: D:/workspace/github.io
        Destination: D:/workspace/github.io/_site
@@ -345,6 +350,7 @@ C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/jekyll-4.2.2/lib/jekyll/commands/serve/se
 
 ```
 > bundle add webrick
+
 Fetching gem metadata from https://rubygems.org/..........
 Resolving dependencies...
 Fetching gem metadata from https://rubygems.org/..........

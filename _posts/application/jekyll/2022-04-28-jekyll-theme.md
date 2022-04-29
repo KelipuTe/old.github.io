@@ -1,11 +1,18 @@
 ---
 title: "使用 Jekyll 主题"
 date: 2022-04-28 10:00:00 +0800
-tags: jekyll github-page
-comment: false
+tags: ruby jekyll github-page
 show_author_profile: true
 show_subscribe: false
+comment: false
 ---
+
+### 环境
+
+- Windows 11 家庭版
+- Ruby 3.1.2
+- RubyGems 3.3.7
+- Jekyll 4.2.2
 
 ### jekyll-TeXt-theme
 
@@ -19,6 +26,7 @@ Github：[https://github.com/kitian616/jekyll-TeXt-theme](https://github.com/kit
 
 ```
 > bundle install --path vendor/bundle
+
 [DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set --local path 'vendor/bundle'`, and stop using this flag
 Fetching gem metadata from https://rubygems.org/..........
 Resolving dependencies...
