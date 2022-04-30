@@ -68,9 +68,11 @@ comment: false
 
 `git remote`，操作远程仓库
 
-`git remote -v`，显示所有远程仓库。origin 为远程仓库的别名。
+`git remote -v`，显示所有远程仓库。
 
-`git remote add origin {url}`，添加远程仓库 origin 并设置地址为 url。
+`git remote add {name} {url}`，添加远程仓库 name 并设置地址为 url。
+
+常用的：`git remote add origin {url}`，添加远程仓库 origin 并设置地址为 url。
 
 `git remote set-url origin {url}`，修改远程仓库 origin 的地址为 url。如果未指定协议，则默认为 SSH。
 
@@ -78,7 +80,9 @@ comment: false
 
 #### 获取代码
 
-`git fetch`，从远程获取代码库。 
+`git fetch`，从远程仓库获取代码。 
+
+`git fetch origin`，从远程仓库 origin 获取代码。 
 
 #### 获取代码并合并
 
@@ -86,29 +90,35 @@ comment: false
 
 `git pull` 其实是 `git fetch` 和 `git merge FETCH_HEAD` 的简写。
 
-`git pull origin master`，将远程主机 origin 的 master 分支拉取过来，与本地的当前分支合并。
+`git pull {name} {remote branch}:{locol branch}`，将远程仓库 name 的 remote branch 分支拉取过来，与本地的 locol branch 分支合并。
 
-`git pull origin master:test`，将远程主机 origin 的 master 分支拉取过来，与本地的 test 分支合并。
+常用的：`git pull origin master`，将远程仓库 origin 的 master 分支拉取过来，与本地的当前分支合并。
 
 #### 上传代码并合并
 
 `git push`,将本地的分支上传到远程并合并。 
 
-`git push origin master:test`，将本地的 master 分支推送到远程主机 origin 的 test 分支。
+`git push {name} {remote branch}:{locol branch}`，将本地的 locol branch 分支推送到远程仓库 name 的 remote branch 分支。
 
-`git push origin master`，将本地的 master 分支推送到远程主机 origin 的 master 分支。
+如果本地的 locol branch 分支和远程仓库 name 的 remote branch 分支名字一样，可以简化成 `git push {name} {branch}`。
 
-`git push origin master` 是 `git push origin master:master` 的简写。
+`git push origin master:master`，将本地的 master 分支推送到远程仓库 origin 的 master 分支。
+
+常用的：`git push origin master` 是 `git push origin master:master` 的简写。
+
+`-u` 参数，记录 push 到远端分支的默认值，下次想要继续 push 这个分支的时候，推送命令就可以简写成 `git push`。
+
+执行 `git push -u origin master` 之后，下次在想推送 master 分支的时候，直接 `git push` 即可。
 
 `--force` 参数，强制推送。
 
-`git push --force master`，将本地的 master 分支强制推送到远程主机 origin 的 master 分支并覆盖。
+`git push --force master`，将本地的 master 分支强制推送到远程仓库 origin 的 master 分支并覆盖。
 
 `git push --force master` 可以简写为 `git push -f master`。
 
 **谨慎使用 `--force` 参数**。
 
-`git push origin -d {name}`，删除远程主机 origin 的 name 分支。
+`git push origin -d {name}`，删除远程仓库 origin 的 name 分支。
 
 #### 分支
 
@@ -141,3 +151,15 @@ comment: false
 `git stash`，把所有没有提交的修改暂存。
 
 `git stash pop`，恢复到 `git stash` 之前。
+
+### 提交一个本地仓库到多个远程仓库
+
+这里提交一个本地仓库到 Github 和 Gitee 两个远程仓库。
+
+```
+git remote add origin git@github.com:xxx/demo_project.git
+git push origin master
+
+git remote add gitee git@gitee.com:xxx/demo_project.git
+git push gitee master
+```
