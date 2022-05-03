@@ -1,6 +1,7 @@
 ---
 title: "使用 Jekyll 主题"
-date: 2022-04-28 10:00:00 +0800
+create_date: 2022-04-28 22:00:00 +0800
+date: 2022-04-28 22:00:00 +0800
 tags: ruby jekyll github-page
 show_author_profile: true
 show_subscribe: false
