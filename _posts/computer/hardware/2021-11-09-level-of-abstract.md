@@ -1,6 +1,6 @@
 ---
 title: "抽象层级"
-create_date: 2022-05-07 08:00:00 +0800
+create_date: 2021-11-09 08:00:00 +0800
 date: 2022-05-07 08:00:00 +0800
 tags: hardware
 comment: false
@@ -104,6 +104,30 @@ show_subscribe: false
 
 <div style="text-align: center">
 <img src="/image/hardware/256_bit_memory_abstract.drawio.png">
+</div>
+
+### 内存
+
+由内存的雏形可以组成 256 字节内存。
+
+<div style="text-align: center">
+<img src="/image/hardware/256_byte_memory.drawio.png">
+</div>
+
+这里进行了一层抽象。
+
+<div style="text-align: center">
+<img src="/image/hardware/256_byte_memory_abstract.drawio.png">
+</div>
+
+### CPU
+
+由逻辑门、寄存器可以组成控制单元。这里进行了一层抽象。
+
+由算术逻辑单元、控制单元、寄存器可以组成 CPU。这里进行了一层抽象。
+
+<div style="text-align: center">
+<img src="/image/hardware/cpu.drawio.png">
 </div>
 
 ### 参考
