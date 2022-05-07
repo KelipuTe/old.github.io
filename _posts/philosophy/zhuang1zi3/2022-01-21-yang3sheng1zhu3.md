@@ -1,7 +1,7 @@
 ---
 title: "庄子·内篇·养生主"
-create_date: 2022-01-21 22:00:00 +0800
-date: 2022-01-21 22:00:00 +0800
+create_date: 2022-01-21 08:00:00 +0800
+date: 2022-01-21 08:00:00 +0800
 tags: philosophy 庄子
 comment: false
 show_author_profile: true

@@ -1,7 +1,7 @@
 ---
 title: "使用 Jekyll 和 GitHub Pages 制作个人博客"
-create_date: 2022-04-27 22:00:00 +0800
-date: 2022-04-27 22:00:00 +0800
+create_date: 2022-04-27 08:00:00 +0800
+date: 2022-04-27 08:00:00 +0800
 tags: ruby jekyll github-page
 show_author_profile: true
 show_subscribe: false

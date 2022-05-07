@@ -1,7 +1,7 @@
 ---
 title: "关于献血"
-create_date: 2022-01-07 22:00:00 +0800
-date: 2022-01-07 22:00:00 +0800
+create_date: 2022-01-07 08:00:00 +0800
+date: 2022-01-07 08:00:00 +0800
 tags: blood-donation
 comment: false
 show_author_profile: true

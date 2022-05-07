@@ -1,7 +1,7 @@
 ---
 title: "系统调用"
-create_date: 2021-12-16 22:00:00 +0800
-date: 2022-01-24 22:00:00 +0800
+create_date: 2021-12-16 08:00:00 +0800
+date: 2022-01-24 08:00:00 +0800
 tags: linuc c
 comment: false
 show_author_profile: true
