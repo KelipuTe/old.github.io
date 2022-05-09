@@ -2,7 +2,7 @@
 title: "data structure（数据结构）"
 create_date: 2022-11-10 08:00:00 +0800
 date: 2022-11-10 08:00:00 +0800
-tags: data-structure
+tags: computer-science data-structure
 comment: false
 show_author_profile: true
 show_subscribe: false

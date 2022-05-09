@@ -2,7 +2,7 @@
 title: "BT 种子"
 create_date: 2021-12-14 08:00:00 +0800
 date: 2021-12-14 08:00:00 +0800
-tags: protocol
+tags: computer-science protocol
 comment: false
 show_author_profile: true
 show_subscribe: false

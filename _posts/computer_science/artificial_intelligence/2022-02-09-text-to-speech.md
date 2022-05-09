@@ -2,7 +2,7 @@
 title: "Text To Speech"
 create_date: 2022-02-09 08:00:00 +0800
 date: 2022-02-09 08:00:00 +0800
-tags: artificial-intelligence
+tags: computer-science artificial-intelligence
 comment: false
 show_author_profile: true
 show_subscribe: false

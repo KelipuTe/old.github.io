@@ -2,7 +2,7 @@
 title: "Change Data Capture"
 create_date: 2022-05-06 08:00:00 +0800
 date: 2022-05-06 08:00:00 +0800
-tags: database
+tags: computer-science database
 comment: false
 show_author_profile: true
 show_subscribe: false

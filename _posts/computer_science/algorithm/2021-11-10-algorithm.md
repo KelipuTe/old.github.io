@@ -2,7 +2,7 @@
 title: "algorithm（算法）"
 create_date: 2022-11-10 08:00:00 +0800
 date: 2022-11-10 08:00:00 +0800
-tags: algorithm
+tags: computer-science algorithm
 comment: false
 show_author_profile: true
 show_subscribe: false
