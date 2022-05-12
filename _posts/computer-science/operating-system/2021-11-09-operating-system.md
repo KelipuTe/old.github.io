@@ -1,7 +1,7 @@
 ---
 title: "operating system（操作系统）"
 create_date: 2021-11-09 08:00:00 +0800
-date: 2021-11-09 08:00:00 +0800
+date: 2022-05-12 08:00:00 +0800
 tags: computer-science operating-system
 comment: false
 show_author_profile: true
@@ -14,8 +14,37 @@ show_subscribe: false
   - multitasking（多任务处理）
     - scheduling（调度）
   - virtual memory（虚拟内存）
-    - dynamic memory allocation（动态分配内存）
     - memory protection（内存保护）
+    - dynamic memory allocation（动态分配内存）
+    - physical memory address（物理内存地址）
+    - virtual memory address（虚拟内存地址）
+    - MMU（memory management unit、内存管理单元）
+    - segmented memory management（段式管理）
+      - segment（段）
+      - 虚拟内存地址
+        - 段选择子
+          - 段号
+        - 段内偏移量
+      - segment table（段表）
+        - 段描述符
+          - 段基地址
+          - 段界限
+          - 特权等级
+      - memory fragmentation（内存碎片）
+    - page memory management（页式管理）
+      - page（页）
+      - 虚拟内存地址
+        - 页号
+        - 页内偏移
+      - page table（页表）
+        - 虚拟页号
+        - 物理页号
+      - missing page interruption（缺页中断）
+      - swap out（换出）
+      - swap in（换入）
+      - multi-level page table（多级页表）
+      - TLB（Translation Lookaside Buffer、页表缓存）
+    - segmented paged memory management（段页式管理）
   - time-sharing（分时操作系统）
   - UNIX
     - kernel（内核）
@@ -33,6 +62,110 @@ show_subscribe: false
 操作系统也是程序，但它有操作硬件的特殊权限，可以运行和管理其他程序。
 
 批处理：一次输入多个程序，当运行完一个程序，会自动运行下一个程序。
+
+### 虚拟内存
+
+单片机的 CPU 可以直接操作内存物理地址。
+
+操作系统把进程所使用的内存地址隔离，让进程间互不干涉。
+
+操作系统为进程提供虚拟内存地址和物理内存地址的映射。
+
+#### 段式管理
+
+程序由若干个逻辑分段组成的，如可由代码分段、数据分段、栈段、堆段组成。
+
+虚拟地址由段选择子和段内偏移量两部分组成。段选择子保存在段寄存器。段选择子里的段号用作段表的索引。段表保存段基地址、段界限和特权等级等。
+
+<div style="text-align: center; margin: 5px auto">
+<img src="/image/computer-science/operating-system/segmented_management.drawio.png">
+</div>
+
+<div style="text-align: center; margin: 5px auto">
+<img src="/image/computer-science/operating-system/segment_table.drawio.png">
+</div>
+
+虚拟地址中的段内偏移量应该位于 0 和段界限之间，如果段内偏移量是合法的，就将段基地址加上段内偏移量得到物理内存地址。
+
+不足之处：内存碎片、内存交换的效率低。
+
+内存碎片有两种：
+
+- 外部碎片，多个不连续的小物理内存，导致新的程序由于内存不够无法被装载；
+- 内部碎片，程序所有的数据都被装载到了物理内存，但是这个程序有部分的数据可能并不是很常使用，这会导致内存的浪费；
+
+内存交换可以解决外部碎片的问题。可以把程序占用的内存写到硬盘上，然后再从硬盘上读回到内存。
+
+在 Linux 中，内存交换空间也就是 Swap 空间，这块空间是从硬盘划分出来的，用于内存与硬盘的空间交换。
+
+对于多进程的系统来说，用分段的方式，很容易产生内存碎片。内存交换又受硬盘速度限制，效率低。
+
+#### 页式管理
+
+分页：整个虚拟内存空间和物理内存空间都切成一个个固定尺寸大小的内存空间（页）。
+
+在 Linux 中，每一页的大小为 4KB。分页可以让内存交换时，读写的数据少一点。
+
+虚拟地址与物理地址之间通过页表来映射，页表存储在内存里。从页表的性质来看，保存在内存中的页表承担的职责是将虚拟地址翻译成物理地址，所以页表一定要覆盖全部虚拟地址空间。
+
+虚拟地址分为两部分：页号和页内偏移。页号作为页表的索引，页表包含物理页每页所在物理内存的基地址，这个基地址与页内偏移的组合就形成了物理内存地址。
+
+<div style="text-align: center; margin: 5px auto">
+<img src="/image/computer-science/operating-system/page_management.drawio.png">
+</div>
+
+<div style="text-align: center; margin: 5px auto">
+<img src="/image/computer-science/operating-system/page_table.drawio.png">
+</div>
+
+对于一个内存地址转换，分三个步骤：
+
+- 把虚拟内存地址，切分成页号和偏移量；
+- 根据页号，从页表里面，查询对应的物理页号；
+- 直接拿物理页号，加上前面的偏移量，就得到了物理内存地址。
+
+当进程访问的虚拟地址在页表中查不到时，系统会产生一个缺页异常。然后进入系统内核空间，分配物理内存，更新进程页表，最后再返回用户空间，恢复进程的运行。
+
+- 换出：把最近没被使用的内存页面释放掉（暂时写在硬盘上）
+- 换入：需要内存页面的时候，从硬盘加载到内存
+
+由于内存空间都是预先划分好的，不会产生内存碎片。一次性写入磁盘的也只有少数的一个页或者几个页，不会花太多时间，内存交换的效率比较高。
+
+分页的方式使得在加载程序的时候，不需要一次性都把程序加载到物理内存中。
+
+#### 多级页表
+
+简单的分页有空间上的缺陷。在 32 位的环境下，虚拟地址空间共有 4GB（2^32）。假设一个页的大小是 4KB（2^12），每个页表项 4 个字节。那么 4GB 空间就需要 100 万（2^20）个页，大概 4MB 来存储页表。每个进程都有自己的虚拟地址空间（页表）。那么，100 个进程就需要 400MB 来存储页表。
+
+多级页表把 100 多万个页表项再分页，用一个一级页表 4KB 表示全部的虚拟地址空间，一级页表一共有 1024 个页表项。每个一级页表项对应一个二级页表，每个二级页表也有 1024 个页表项。二级页表可以在需要时进行创建。
+
+<div style="text-align: center; margin: 5px auto">
+<img src="/image/computer-science/operating-system/multi_level_page_table.drawio.png">
+</div>
+
+对于 64 位的系统，多级页表变成了四级目录，分别是：PGD（page global directory、全局页目录项）、PUD（page upper directory、上层页目录项）、PMD（page middle directory、中间页目录项）、PTE（page table entry、页表项）。
+
+多级页表解决了空间上的问题，但是转换工序带来了时间上的开销。
+
+页表缓存（又叫转址旁路缓存、快表等）：在 CPU 里放一块内存用来存放最常访问的页表项。
+
+利用局部性原理，程序在一段时间内的执行，仅限于程序的一部分。
+
+#### 段页式管理
+
+先将程序划分为多个逻辑段，接着再把每个段划分为多个页。地址结构由段号、段内页号和页内位移三部分组成。每个程序一张段表，每个段一张页表，段表中的地址是页表的起始地址，而页表中的地址则是物理页号。
+
+<div style="text-align: center; margin: 5px auto">
+<img src="/image/computer-science/operating-system/segmented_paged_management.drawio.png">
+</div>
+
+段页式地址变换中要得到物理地址须经过三次内存访问：
+
+- 访问段表，得到页表起始地址
+- 访问页表，得到物理页号
+- 将物理页号与页内位移组合，得到物理地址
+
+可用软、硬件相结合的方法实现，虽然增加了硬件成本和系统开销，但提高了内存的利用率。
 
 ### 中断
 
