@@ -1,7 +1,7 @@
 ---
 title: "Git 常用命令"
 create_date: 2021-11-17 08:00:00 +0800
-date: 2022-04-30 08:00:00 +0800
+date: 2021-11-17 08:00:00 +0800
 tags: windows git
 show_author_profile: true
 show_subscribe: false

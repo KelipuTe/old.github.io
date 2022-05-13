@@ -245,7 +245,7 @@ used_memory_human:212.00M
 
 $ext len（除去有效数据的大小） = per len（用内存信息计算出来的平均大小） - data len（数据的大小） - key len（key 的大小）$
 
-从图表上看，从 value 变大时，会额外占用更多的空间。
+从图表上看，value 变大时，会额外占用更多的空间。
 
 ### 参考
 

@@ -1,7 +1,7 @@
 ---
 title: "operating system（操作系统）"
 create_date: 2021-11-09 08:00:00 +0800
-date: 2022-05-12 08:00:00 +0800
+date: 2021-11-17 08:00:00 +0800
 tags: computer-science operating-system
 comment: false
 show_author_profile: true
