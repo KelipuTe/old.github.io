@@ -27,7 +27,7 @@ title   : 冷月重工图书馆（重建中）
 # description: > # this means to ignore newlines until "Language & timezone"
 #   Your Site Description
 description: >
-  必要时 F5 强刷
+  必要时 ctrl + f5 强刷
 
 
 ## => Language and Timezone
@@ -45,7 +45,7 @@ author:
   type      : person
   # name      : Your Name
   name      : 西柊慧音
-  url       :
+  url       : 
   # avatar    : # path or url of avatar image (square)
   avatar    : pid49256268.jpg
   # bio       : I am an amazing person.
