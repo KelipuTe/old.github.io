@@ -47,7 +47,7 @@ show_subscribe: false
   - zero day vulnerability（零日漏洞）
   - worms（计算机蠕虫）
   - botnet（僵尸网络）
-    - - DDOS（distributed denial of service attack、分布式拒绝服务攻击）
+    - DDOS（distributed denial of service attack、分布式拒绝服务攻击）
 
 ### 网络安全
 
