@@ -225,3 +225,8 @@ Linux 内核中，延迟等待的时间定义如下，关键在于 HZ 参数的�
 在快速重传拥塞发生算法的基础上 cwnd 设置为 ssthresh +3 （收到三个 ACK 一样的包）。重传丢失的数据包。如果再收到重复的 ACK 报文，cwnd +1。直到收到新的 ACK。
 
 收到新的 ACK 报文，证明数据都已收到。将 cwnd 设置为 ssthresh，然后进入拥塞避免。
+
+### 参考
+
+- [小林coding](https://xiaolincoding.com/)
+  - [图解网络](https://xiaolincoding.com/network/)
