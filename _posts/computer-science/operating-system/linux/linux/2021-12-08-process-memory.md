@@ -1,8 +1,8 @@
 ---
-title: "进程内存"
+title: "计算机科学--操作系统--Linux--进程内存"
 create_date: 2021-12-08 08:00:00 +0800
 date: 2022-01-09 08:00:00 +0800
-tags: linuc c process
+tags: computer-science operating-system linux process
 comment: false
 show_author_profile: true
 show_subscribe: false

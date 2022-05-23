@@ -1,8 +1,8 @@
 ---
-title: "linux 文档"
+title: "计算机科学--操作系统--Linux--文档"
 create_date: 2022-01-07 08:00:00 +0800
 date: 2022-02-09 08:00:00 +0800
-tags: linuc c
+tags: computer-science operating-system linux
 comment: false
 show_author_profile: true
 show_subscribe: false

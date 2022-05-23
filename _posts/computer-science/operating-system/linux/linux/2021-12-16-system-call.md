@@ -1,8 +1,8 @@
 ---
-title: "系统调用"
+title: "计算机科学--操作系统--Linux--系统调用"
 create_date: 2021-12-16 08:00:00 +0800
 date: 2022-01-24 08:00:00 +0800
-tags: linuc c
+tags: computer-science operating-system linux
 comment: false
 show_author_profile: true
 show_subscribe: false
