@@ -213,6 +213,7 @@ exclude:
   - /screenshots
   - /test
   - /vendor
+  - /drawio
 
 defaults:
   - scope:
