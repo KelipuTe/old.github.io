@@ -40,3 +40,8 @@ InnoDB 非主键索引的叶子节点存储的是主键和其他带索引的列�
 
 行级锁：开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概
 率最低，并发度也最高。
+
+### 参考
+
+- [极客时间](https://time.geekbang.org/)
+  - [MySQL 实战 45 讲](https://time.geekbang.org/column/intro/100020801?tab=catalog)

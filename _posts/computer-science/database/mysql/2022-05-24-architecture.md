@@ -51,3 +51,9 @@ MySQL 大体上可分为 server（服务层）和 storage engine（存储引擎�
 执行器的工作是，执行 SQL 语句最终的执行方案。
 
 开始执行的时候，要先判断一下对这个表有没有执行查询的权限。如果没有，就会返回没有权限的错误。如果有，就打开表继续执行。打开表的时候，执行器会根据表定义的引擎，去使用这个引擎提供的接口。
+
+### 参考
+
+- [极客时间](https://time.geekbang.org/)
+  - [MySQL 实战 45 讲](https://time.geekbang.org/column/intro/100020801?tab=catalog)
+    - 01 | 基础架构：一条SQL查询语句是如何执行的？
