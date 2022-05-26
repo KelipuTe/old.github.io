@@ -1,6 +1,5 @@
 ---
 title: "Architecture（架构）"
-create_date: 2022-05-24 08:00:00 +0800
 date: 2022-05-24 08:00:00 +0800
 tags: computer-science database mysql
 comment: false

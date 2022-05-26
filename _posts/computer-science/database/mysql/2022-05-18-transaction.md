@@ -1,6 +1,5 @@
 ---
 title: "事务（Transaction）"
-create_date: 2022-05-25 08:00:00 +0800
 date: 2022-05-25 08:00:00 +0800
 tags: computer-science database mysql
 comment: false

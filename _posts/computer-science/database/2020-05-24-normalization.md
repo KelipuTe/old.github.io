@@ -1,6 +1,5 @@
 ---
-title: "计算机科学--数据库--Database Normalization（数据库范式）"
-create_date: 2022-05-24 08:00:00 +0800
+title: "数据库范式（Database Normalization）"
 date: 2022-05-24 08:00:00 +0800
 tags: computer-science database
 comment: false

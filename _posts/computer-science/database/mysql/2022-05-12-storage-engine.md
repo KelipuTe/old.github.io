@@ -1,6 +1,5 @@
 ---
-title: "计算机科学--数据库--MySQL--Storage Engine（存储引擎）"
-create_date: 2022-05-24 08:00:00 +0800
+title: "存储引擎（Storage Engine）"
 date: 2022-05-24 08:00:00 +0800
 tags: computer-science database mysql
 comment: false
