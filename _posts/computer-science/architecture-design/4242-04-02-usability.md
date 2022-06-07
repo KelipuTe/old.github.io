@@ -88,3 +88,7 @@ $系统每秒理论最大流量 = 每秒查询率（QPS） \time·s 请求平均
 - 只在失败处重试：底层重试过了，上层就不要重试了，避免级联重试
 
 ### [负载均衡]({% link _posts/computer-science/architecture-design/4242-04-02-load-balance.md %})
+
+### 参考
+
+- 极客时间：Go 进阶训练营
