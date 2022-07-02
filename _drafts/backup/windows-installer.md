@@ -1,19 +1,8 @@
-## 目录
+## windows-installer
 
-2022-01-22
+windows 安装包，2022-07-22
 
 ---
-
-### android_apk，安卓安装包
-
-| 应用名 | 描述 | 官方网站 |
-| --- | --- | --- |
-| taptap | - | https://www.taptap.com/ |
-| 少女前线 | - | https://gf-cn.sunborngame.com/ |
-
-搜盘网，波点音乐，快鸟下载，磁力检索机器人，cimoc漫画（https://gitee.com/Haleydu/update/raw/master/sourceBaseUrl.json），轻阅
-
-### windows_installer，windows安装包
 
 #### 目录里有的安装包
 
