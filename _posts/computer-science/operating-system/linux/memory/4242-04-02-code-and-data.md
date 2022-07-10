@@ -7,7 +7,7 @@ show_author_profile: true
 show_subscribe: false
 ---
 
-> 操作系统架构：x86_64 AMD Ryzen
+> 操作系统架构：x86_64 AMD Ryzen <br/>
 > 操作系统版本：Ubuntu 2204
 
 > 样例代码 <br/>
@@ -29,6 +29,8 @@ Linux 进程的虚拟内存会对内存空间进行划分，不同的区域存�
 
 ### 函数代码
 
+函数代码的起始地址在编译时就已经确定了。
+
 函数代码的起始地址：
 
 ```
@@ -39,8 +41,6 @@ $6 = (int (*)(int)) 0x55555555513c <func2>
 (gdb) p &main
 $7 = (int (*)()) 0x555555555151 <main>
 ```
-
-函数代码的起始地址在编译时就已经确定了。
 
 和符号表对照：
 
@@ -101,6 +101,8 @@ $7 = (int (*)()) 0x555555555151 <main>
 
 #### 全局变量
 
+全局变量的起始地址在编译时就已经确定了。
+
 全局变量的起始地址：
 
 ```
@@ -109,8 +111,6 @@ $1 = (int *) 0x555555558010 <x>
 (gdb) p &y
 $2 = (int *) 0x555555558014 <y>
 ```
-
-全局变量的起始地址在编译时就已经确定了。
 
 和符号表对照：
 
@@ -130,71 +130,20 @@ $2 = (int *) 0x555555558014 <y>
 0x555555558014 <y>:	0x00	0x01	0x00	0x00
 ```
 
+| 变量 x 的内存地址 | 数据 | 变量 y 的内存地址 | 数据 |
+| --- | --- | --- | --- |
+| 0x555555558010 | 0x10 | 0x555555558014 | 0x00 |
+| 0x555555558011 | 0x00 | 0x555555558015 | 0x01 |
+| 0x555555558012 | 0x00 | 0x555555558016 | 0x00 |
+| 0x555555558013 | 0x00 | 0x555555558017 | 0x00 |
+
+- 注意，在内存中是小端字节序。
+- `int x = 1 << 4;` = $2^{4}$ = 0x 00 00 00 10
+- `int y = 1 << 8;` = $2^{8}$ = 0x 00 00 01 00
+
 #### 局部变量
 
-局部变量是分配在栈上的，每次执行的时候都不一样。
-
-```
-> ./code_and_data
-
-&x start address=0x557ba472f010
-&x end address  =0x557ba472f014
-&y start address=0x557ba472f014
-&y end address  =0x557ba472f018
-&a start address=0x7ffd3a8bd450
-&b start address=0x7ffd3a8bd454
-
-> ./code_and_data
-
-&x start address=0x557deac82010
-&x end address  =0x557deac82014
-&y start address=0x557deac82014
-&y end address  =0x557deac82018
-&a start address=0x7fffaa4168e0
-&b start address=0x7fffaa4168e4
-
-> ./code_and_data
-
-&x start address=0x556862c6b010
-&x end address  =0x556862c6b014
-&y start address=0x556862c6b014
-&y end address  =0x556862c6b018
-&a start address=0x7ffe89646a90
-&b start address=0x7ffe89646a94
-```
-
-可以和进程内存信息比对一下，局部变量的地址都在 stack 区（栈区）。
-
-```
-(gdb) info proc mappings
-process 2810
-Mapped address spaces:
-
-          Start Addr           End Addr       Size     Offset  Perms  objfile
-      0x555555554000     0x555555555000     0x1000        0x0  r--p   /mnt/hgfs/demo-c/demo-in-linux/memory-layout/code_and_data
-      0x555555555000     0x555555556000     0x1000     0x1000  r-xp   /mnt/hgfs/demo-c/demo-in-linux/memory-layout/code_and_data
-      0x555555556000     0x555555557000     0x1000     0x2000  r--p   /mnt/hgfs/demo-c/demo-in-linux/memory-layout/code_and_data
-      0x555555557000     0x555555558000     0x1000     0x2000  r--p   /mnt/hgfs/demo-c/demo-in-linux/memory-layout/code_and_data
-      0x555555558000     0x555555559000     0x1000     0x3000  rw-p   /mnt/hgfs/demo-c/demo-in-linux/memory-layout/code_and_data
-      0x555555559000     0x55555557a000    0x21000        0x0  rw-p   [heap]
-      0x7ffff7d81000     0x7ffff7d84000     0x3000        0x0  rw-p
-      0x7ffff7d84000     0x7ffff7dac000    0x28000        0x0  r--p   /usr/lib/x86_64-linux-gnu/libc.so.6
-      0x7ffff7dac000     0x7ffff7f41000   0x195000    0x28000  r-xp   /usr/lib/x86_64-linux-gnu/libc.so.6
-      0x7ffff7f41000     0x7ffff7f99000    0x58000   0x1bd000  r--p   /usr/lib/x86_64-linux-gnu/libc.so.6
-      0x7ffff7f99000     0x7ffff7f9d000     0x4000   0x214000  r--p   /usr/lib/x86_64-linux-gnu/libc.so.6
-      0x7ffff7f9d000     0x7ffff7f9f000     0x2000   0x218000  rw-p   /usr/lib/x86_64-linux-gnu/libc.so.6
-      0x7ffff7f9f000     0x7ffff7fac000     0xd000        0x0  rw-p
-      0x7ffff7fbb000     0x7ffff7fbd000     0x2000        0x0  rw-p
-      0x7ffff7fbd000     0x7ffff7fc1000     0x4000        0x0  r--p   [vvar]
-      0x7ffff7fc1000     0x7ffff7fc3000     0x2000        0x0  r-xp   [vdso]
-      0x7ffff7fc3000     0x7ffff7fc5000     0x2000        0x0  r--p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-      0x7ffff7fc5000     0x7ffff7fef000    0x2a000     0x2000  r-xp   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-      0x7ffff7fef000     0x7ffff7ffa000     0xb000    0x2c000  r--p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-      0x7ffff7ffb000     0x7ffff7ffd000     0x2000    0x37000  r--p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-      0x7ffff7ffd000     0x7ffff7fff000     0x2000    0x39000  rw-p   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-      0x7ffffffde000     0x7ffffffff000    0x21000        0x0  rw-p   [stack]
-  0xffffffffff600000 0xffffffffff601000     0x1000        0x0  --xp   [vsyscall]
-```
+[局部变量]({% link _posts/computer-science/operating-system/linux/memory/4242-04-02-stack-and-heap.md %})
 
 ### reference（参考）
 
