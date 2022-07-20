@@ -1,6 +1,5 @@
 ---
 title: "Git 常用命令"
-create_date: 2021-11-17 08:00:00 +0800
 date: 2021-11-17 08:00:00 +0800
 tags: windows git
 show_author_profile: true
@@ -51,7 +50,7 @@ comment: false
 
 `git reset --hard HEAD^`，强行回退所有内容到上一个版本。
 
-`git reset --hard {code}`，强行回退所有内容到指定版本。 
+`git reset --hard {code}`，强行回退所有内容到指定版本。
 
 `git reset --hard origin/master`，强行将本地分支回退到和远程 master 分支一样。
 
@@ -81,9 +80,9 @@ comment: false
 
 #### 获取代码
 
-`git fetch`，从远程仓库获取代码。 
+`git fetch`，从远程仓库获取代码。
 
-`git fetch origin`，从远程仓库 origin 获取代码。 
+`git fetch origin`，从远程仓库 origin 获取代码。
 
 #### 获取代码并合并
 
@@ -97,7 +96,7 @@ comment: false
 
 #### 上传代码并合并
 
-`git push`,将本地的分支上传到远程并合并。 
+`git push`,将本地的分支上传到远程并合并。
 
 `git push {name} {remote branch}:{locol branch}`，将本地的 locol branch 分支推送到远程仓库 name 的 remote branch 分支。
 
