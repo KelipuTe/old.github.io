@@ -1,0 +1,27 @@
+---
+title: "balanced binary tree（平衡二叉树、AVL Tree）"
+date: 2022-07-30 08:00:00 +0800
+tags: computer-science data-structure AVL-Tree 计算机科学 数据结构 平衡二叉树
+comment: false
+show_author_profile: true
+show_subscribe: false
+---
+
+平衡二叉树是一种特殊的二叉排序树
+
+### 平衡二叉树的性质
+
+- 1、满足二分搜索树的基本性质。
+- 2、每个结点的左右子树的高度之差的绝对值（平衡因子）最多为 1。
+
+### 详细的图示
+
+见：`/drawio/computer-science/data-structure/balanced_binary_treetree.drawio`
+
+### C 语言版本
+
+见：`demo-c/data-structure/balanced_binary_treetree.drawio`
+
+### reference（参考）
+
+- [平衡二叉树（AVL树）及C语言实现](http://c.biancheng.net/view/3432.html)

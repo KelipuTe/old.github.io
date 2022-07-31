@@ -143,7 +143,7 @@ $2 = (int *) 0x555555558014 <y>
 
 #### 局部变量
 
-[局部变量]({% link _posts/computer-science/operating-system/linux/memory/4242-04-02-stack-and-heap.md %})
+`[局部变量]({ _posts/computer-science/operating-system/linux/memory/4242-04-02-stack-and-heap.md })`
 
 ### reference（参考）
 
