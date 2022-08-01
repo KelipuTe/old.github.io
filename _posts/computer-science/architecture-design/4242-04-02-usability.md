@@ -11,7 +11,7 @@ show_subscribe: false
 
 可用性（usability）：在某个考察时间，系统能够正常运行的概率。考察时间为指定瞬间，则称瞬时可用性；考察时间为指定时段，则称时段可用性。
 
-### [隔离]({% link _posts/computer-science/architecture-design/4242-04-02-isolation.md %})
+### 隔离->[站内链接]({% link _posts/computer-science/architecture-design/4242-04-02-isolation.md %})
 
 ### 超时控制
 
@@ -29,7 +29,7 @@ show_subscribe: false
 
 可以通过超时传递
 
-#### [双峰分布]({% link _posts/mathematics/statistics/4242-04-02-bimodal-distribution.md %})
+#### 双峰分布->[站内链接]({% link _posts/mathematics/statistics/4242-04-02-bimodal-distribution.md %})
 
 ### 过载保护和限流
 
@@ -87,7 +87,7 @@ $系统每秒理论最大流量 = 每秒查询率（QPS） \time·s 请求平均
 - 重试周期：随机化、指数型递增，防止重试请求叠出峰来
 - 只在失败处重试：底层重试过了，上层就不要重试了，避免级联重试
 
-### [负载均衡]({% link _posts/computer-science/architecture-design/4242-04-02-load-balance.md %})
+### 负载均衡->[站内链接]({% link _posts/computer-science/architecture-design/4242-04-02-load-balance.md %})
 
 ### 参考
 

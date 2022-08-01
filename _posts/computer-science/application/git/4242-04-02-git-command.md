@@ -12,13 +12,13 @@ comment: false
 - Windows 11 家庭版
 - git 2.34.0
 
-#### 创建
+### 创建
 
 `git init`，初始化 git 仓库。
 
 初始化之后就会在当前目录创建 `.git/` 目录。
 
-#### 修改
+### 修改
 
 `git add .`，添加所有文件到缓冲区。
 
@@ -32,7 +32,7 @@ comment: false
 
 `git diff {filename}`，可以指定文件 filename 进行比较。
 
-#### 提交
+### 提交
 
 `git commit -m "message"`，提交缓冲区的所有修改到本地仓库。
 
@@ -56,7 +56,7 @@ comment: false
 
 **谨慎使用 `--hard` 参数**。
 
-#### 日志
+### 日志
 
 `git log`，查看历史记录，主要是提交信息。
 
@@ -64,7 +64,7 @@ comment: false
 
 `--graph` 参数，查看历史记录中的分支和合并。
 
-#### 远程仓库
+### 远程仓库
 
 `git remote`，操作远程仓库
 
@@ -78,13 +78,13 @@ comment: false
 
 `git remote rm {name}`，删除远程仓库 name 。
 
-#### 获取代码
+### 获取代码
 
 `git fetch`，从远程仓库获取代码。
 
 `git fetch origin`，从远程仓库 origin 获取代码。
 
-#### 获取代码并合并
+### 获取代码并合并
 
 `git pull`，从远程获取代码并合并。
 
@@ -94,7 +94,7 @@ comment: false
 
 常用的：`git pull origin master`，将远程仓库 origin 的 master 分支拉取过来，与本地的当前分支合并。
 
-#### 上传代码并合并
+### 上传代码并合并
 
 `git push`,将本地的分支上传到远程并合并。
 
@@ -120,7 +120,7 @@ comment: false
 
 `git push origin -d {name}`，删除远程仓库 origin 的 name 分支。
 
-#### 分支
+### 分支
 
 `git branch`，列出本地分支。星号 `*` 标记当前在哪个分支下。
 
@@ -138,7 +138,7 @@ comment: false
 
 `git checkout .`，把本地所有修改的，但是没有提交的，都回退到原来的状态。
 
-#### 合并
+### 合并
 
 `git merge {name}`，合并 name 分支到当前分支。
 
@@ -146,7 +146,7 @@ comment: false
 
 进入文件解决冲突后，需要执行 git add 命令通知 git 冲突已解决。
 
-#### 暂存
+### 暂存
 
 `git stash`，把所有没有提交的修改暂存。
 

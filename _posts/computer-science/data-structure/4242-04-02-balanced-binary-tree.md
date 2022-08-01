@@ -7,20 +7,20 @@ show_author_profile: true
 show_subscribe: false
 ---
 
-平衡二叉树是一种特殊的二叉排序树
+### readme（说明）
+
+文中涉及的图片在 draw.io 文件 `git.io/drawio/computer-science/data-structure/balanced_binary_treetree.drawio` 中。
+
+C 语言版本的代码在：`demo-c/data-structure/balanced_binary_treetree.c`。
+
+### 平衡二叉树
+
+平衡二叉树是一种特殊的二叉排序树。
 
 ### 平衡二叉树的性质
 
 - 1、满足二分搜索树的基本性质。
 - 2、每个结点的左右子树的高度之差的绝对值（平衡因子）最多为 1。
-
-### 详细的图示
-
-见：`/drawio/computer-science/data-structure/balanced_binary_treetree.drawio`
-
-### C 语言版本
-
-见：`demo-c/data-structure/balanced_binary_treetree.drawio`
 
 ### reference（参考）
 
