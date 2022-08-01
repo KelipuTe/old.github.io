@@ -1,8 +1,7 @@
 ---
 title: "septem peccata mortalia"
-create_date: 2022-01-21 08:00:00 +0800
 date: 2022-01-21 08:00:00 +0800
-tags: religion roman-catholic-church
+tags: religion 宗教 roman-catholic-church 罗马天主教
 comment: false
 show_author_profile: true
 show_subscribe: false

@@ -1,6 +1,5 @@
 ---
 title: "使用 Jekyll 和 GitHub Pages 制作个人博客"
-create_date: 2022-04-27 08:00:00 +0800
 date: 2022-04-27 08:00:00 +0800
 tags: ruby jekyll github-page
 show_author_profile: true
@@ -30,9 +29,9 @@ Ruby 官方网站的中文版：[http://www.ruby-lang.org/zh_cn/](http://www.rub
 下载页面的文档指出，Windows 可以用 RubyInstaller：[https://rubyinstaller.org/](https://rubyinstaller.org/)。
 
 > 安装 Ruby 的方法
-> 
+>
 > 每个流行的平台都有多种工具可用于安装 Ruby：
-> 
+>
 > - Linux/UNIX 平台，可以使用第三方工具（如 rbenv 或 RVM）或使用系统中的包管理系统。
 > - macOS 平台，可以使用第三方工具（如 rbenv 或 RVM）。
 > - Windows 平台，可以使用 RubyInstaller。
@@ -40,7 +39,7 @@ Ruby 官方网站的中文版：[http://www.ruby-lang.org/zh_cn/](http://www.rub
 进入 RubyInstaller 下载页面，页面右侧的说明会告诉你该下哪一个版本的。
 
 > Which version to download?
-> 
+>
 > If you don’t know what version to install and you’re getting started with Ruby, we recommend that you use the Ruby+Devkit 3.1.X (x64) installer.
 
 下载 Ruby+Devkit 3.1.2-1 (x64) 完成后，双击运行，启动 Ruby 安装向导，然后一路 next 即可。
