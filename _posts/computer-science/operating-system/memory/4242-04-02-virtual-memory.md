@@ -52,8 +52,8 @@ show_subscribe: false
 
 虚拟地址由段选择子和段内偏移量两部分组成。段选择子保存在段寄存器。段选择子里的段号用作段表的索引。段表保存段基地址、段界限和特权等级等。
 
-- 图片：virtual-memory.drawio/1-1、段式管理
-- 图片：virtual-memory.drawio/1-2、段表
+- 图片：virtual-memory.drawio/2-2、段式管理
+- 图片：virtual-memory.drawio/2-4、段表
 
 虚拟地址中的段内偏移量应该位于 0 和段界限之间，如果段内偏移量是合法的，就将段基地址加上段内偏移量得到物理内存地址。
 
@@ -78,8 +78,8 @@ show_subscribe: false
 
 虚拟地址分为两部分：页号和页内偏移。页号作为页表的索引，页表包含物理页每页所在物理内存的基地址，这个基地址与页内偏移的组合就形成了物理内存地址。
 
-- 图片：virtual-memory.drawio/2-1、页式管理
-- 图片：virtual-memory.drawio/2-2、页表
+- 图片：virtual-memory.drawio/4-2、页式管理
+- 图片：virtual-memory.drawio/4-4、页表
 
 页表里的页表项中除了物理地址之外，还有一些标记属性的数据，比如控制一个页的读写权限，标记该页是否存在等。在内存访问方面，操作系统提供了更好的安全性。
 
@@ -115,7 +115,7 @@ show_subscribe: false
 
 多级页表解决了空间上的问题，但是转换工序带来了时间上的开销。
 
-- 图片：virtual-memory.drawio/2-3、多级页表
+- 图片：virtual-memory.drawio/4-6、多级页表
 
 对于 64 位的系统，多级页表变成了四级目录，分别是：PGD（page global directory、全局页目录项）、PUD（page upper directory、上层页目录项）、PMD（page middle directory、中间页目录项）、PTE（page table entry、页表项）。
 
@@ -131,7 +131,7 @@ show_subscribe: false
 
 先将程序划分为多个逻辑段，接着再把每个段划分为多个页。地址结构由段号、段内页号、页内位移三部分组成。每个程序一张段表，每个段一张页表，段表中的地址是页表的起始地址，而页表中的地址则是物理页号。
 
-- 图片：virtual-memory.drawio/3-1、段页式管理
+- 图片：virtual-memory.drawio/6-2、段页式管理
 
 段页式地址变换中要得到物理地址须经过三次内存访问：
 
