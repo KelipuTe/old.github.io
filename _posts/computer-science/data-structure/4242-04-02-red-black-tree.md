@@ -1,6 +1,6 @@
 ---
 title: "red-black tree（红黑树）"
-date: 2022-08-01 08:00:00 +0800
+date: 2022-08-08 08:00:00 +0800
 tags: computer-science 计算机科学 data-structure 数据结构 binary-search-tree 二叉查找树
 comment: false
 show_author_profile: true
